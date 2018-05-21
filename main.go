@@ -1,11 +1,20 @@
 package main
 
-import "fmt"
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+	"os"
+	"bufio"
+)
 
 func main() {
 	fmt.Printf("Hello world!\n")
 	fmt.Printf(variables())
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter your name: ")
+	text, _ := reader.ReadString('\n')
+	fmt.Println(text)
 }
 
 func variables() string {
@@ -16,4 +25,3 @@ func variables() string {
 
 	return ("This is a string: "+ text + "\n"+"This is an integer: " + numberToString + "\n")
 }
-
